@@ -757,7 +757,7 @@ jobs:
       - name: Verify with Maven
         run: mvn -B verify
 
-  Palladio-Addons-Palladio.TX:
+  Palladio-Addons-Palladio_TX:
     runs-on: ubuntu-latest
     needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
     steps:
@@ -839,7 +839,7 @@ jobs:
 
   Palladio-Addon-ArchitecturalTemplates:
     runs-on: ubuntu-latest
-    needs: [Palladio-Addons-Palladio.TX, Palladio-Addons-MeasurementsUI, Palladio-Analyzer-SimuLizar-Power, Palladio-Addons-ExperimentAutomation, Palladio-Addons-CostEfficiency]
+    needs: [Palladio-Addons-Palladio_TX, Palladio-Addons-MeasurementsUI, Palladio-Analyzer-SimuLizar-Power, Palladio-Addons-ExperimentAutomation, Palladio-Addons-CostEfficiency]
     steps:
       - uses: actions/checkout@v3
         with:
