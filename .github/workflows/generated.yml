@@ -1,0 +1,968 @@
+name: Maven Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  Palladio-Supporting-Branding:
+    runs-on: ubuntu-latest
+    needs: []
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Supporting-Branding
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Example-Models:
+    runs-on: ubuntu-latest
+    needs: []
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Example-Models
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-P2Mirror-CBIAggregator:
+    runs-on: ubuntu-latest
+    needs: []
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-P2Mirror-CBIAggregator
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ThirdParty-Library:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ThirdParty-Library
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Core-Commons:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Core-Commons
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ThirdParty-YakinduStateCharts:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ThirdParty-YakinduStateCharts
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ThirdParty-EMFProfiles:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ThirdParty-EMFProfiles
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Supporting-EclipseJavaDevelopmentTools:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Supporting-EclipseJavaDevelopmentTools
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ReverseEngineering-Java:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ReverseEngineering-Java
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ReverseEngineering-Docker:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ReverseEngineering-Docker
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Supporting-WorkflowEngine:
+    runs-on: ubuntu-latest
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Supporting-WorkflowEngine
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ThirdParty-Wrapper:
+    runs-on: ubuntu-latest
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ThirdParty-Wrapper
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Supporting-FeatureModel:
+    runs-on: ubuntu-latest
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Supporting-FeatureModel
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-MetricSpecification:
+    runs-on: ubuntu-latest
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-MetricSpecification
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Supporting-MDSDProfiles:
+    runs-on: ubuntu-latest
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Supporting-MDSDProfiles
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-MeasurementFramework:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-MeasurementFramework
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Simulation-AbstractSimEngine:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Simulation-AbstractSimEngine
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-SensorFramework:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-SensorFramework
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-EDP2:
+    runs-on: ubuntu-latest
+    needs: [Palladio-QuAL-MeasurementFramework, Palladio-Simulation-AbstractSimEngine, Palladio-QuAL-SensorFramework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-EDP2
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Core-PCM:
+    runs-on: ubuntu-latest
+    needs: [Palladio-QuAL-EDP2]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Core-PCM
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-ProbeFramework:
+    runs-on: ubuntu-latest
+    needs: [Palladio-QuAL-EDP2]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-ProbeFramework
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-RecorderFramework:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-RecorderFramework
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Editors-Commons:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Editors-Commons
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Simulation-Scheduler:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Simulation-Scheduler
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-Power-ProfilingImport:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-Power-ProfilingImport
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-FluentApiModelGenerator:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-FluentApiModelGenerator
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-Framework:
+    runs-on: ubuntu-latest
+    needs: [Palladio-QuAL-RecorderFramework, Palladio-Editors-Commons, Palladio-Simulation-Scheduler, Palladio-Addons-Power-ProfilingImport, Palladio-Addons-FluentApiModelGenerator]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-Framework
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-Solver:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Framework]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-Solver
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Editors-GMF:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Editors-GMF
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-MonitorRepository:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-MonitorRepository
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ThirdParty-CloudScaleUsageEvolution:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ThirdParty-CloudScaleUsageEvolution
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-QuAL-ExperimentAnalysis:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-QuAL-ExperimentAnalysis
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-Reliability:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-Reliability
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Editors-Tree:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Editors-Tree
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ReverseEngineering-SoMoX:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ReverseEngineering-SoMoX
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ReverseEngineering-SoMoX-JaMoPP:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ReverseEngineering-SoMoX-JaMoPP
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-Power:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-Power
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-ServiceLevelObjectives:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-ServiceLevelObjectives
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-SimuCom:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-SimuCom
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ReverseEngineering-SoMoX-RuleEngine:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ReverseEngineering-SoMoX-RuleEngine
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-ProtoCom:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-ProtoCom
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-SimuLizar:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-SimuLizar
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-Power-Regression:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-Power-Regression
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-PerOpteryx:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-PerOpteryx
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-SimuComExactSchedulers:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-SimuComExactSchedulers
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-Power-CaseStudy:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-Power-CaseStudy
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-EventSim:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-EventSim
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-Palladio.TX:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-Palladio.TX
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-MeasurementsUI:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-MeasurementsUI
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Analyzer-SimuLizar-Power:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Analyzer-SimuLizar-Power
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-ExperimentAutomation:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-ExperimentAutomation
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-CostEfficiency:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-CostEfficiency
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addon-ArchitecturalTemplates:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addons-Palladio.TX, Palladio-Addons-MeasurementsUI, Palladio-Analyzer-SimuLizar-Power, Palladio-Addons-ExperimentAutomation, Palladio-Addons-CostEfficiency]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addon-ArchitecturalTemplates
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addon-ArchitecturalTemplates-LoadBalancing:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addon-ArchitecturalTemplates]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addon-ArchitecturalTemplates-LoadBalancing
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Example-Models-Package:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addon-ArchitecturalTemplates]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Example-Models-Package
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Editors-Sirius:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Addon-ArchitecturalTemplates-LoadBalancing, Palladio-Example-Models-Package]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Editors-Sirius
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Supporting-EMFProfilesEditor:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Editors-Sirius]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Supporting-EMFProfilesEditor
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Addons-Indirections:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Editors-Sirius]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Addons-Indirections
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Build-UpdateSite:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Supporting-EMFProfilesEditor, Palladio-Addons-Indirections]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Build-UpdateSite
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Bench-Product:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Bench-Product
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Build-InstallationTest-Release:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Build-InstallationTest-Release
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Build-InstallationTest-Nightly:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Build-InstallationTest-Nightly
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-Bench-Oomph:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Bench-Oomph
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+  Palladio-ReverseEngineering-RuleEngine-UpdateSite:
+    runs-on: ubuntu-latest
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-ReverseEngineering-RuleEngine-UpdateSite
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - name: Verify with Maven
+        run: mvn -B verify
+        
