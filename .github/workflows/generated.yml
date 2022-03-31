@@ -17,9 +17,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Example-Models:
     runs-on: ubuntu-latest
@@ -33,9 +34,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven' 
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-P2Mirror-CBIAggregator:
     runs-on: ubuntu-latest
@@ -49,9 +51,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ThirdParty-Library:
     runs-on: ubuntu-latest
@@ -65,9 +68,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Core-Commons:
     runs-on: ubuntu-latest
@@ -81,9 +85,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ThirdParty-YakinduStateCharts:
     runs-on: ubuntu-latest
@@ -97,9 +102,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ThirdParty-EMFProfiles:
     runs-on: ubuntu-latest
@@ -113,9 +119,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Supporting-EclipseJavaDevelopmentTools:
     runs-on: ubuntu-latest
@@ -129,9 +136,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ReverseEngineering-Java:
     runs-on: ubuntu-latest
@@ -145,9 +153,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ReverseEngineering-Docker:
     runs-on: ubuntu-latest
@@ -161,9 +170,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Supporting-WorkflowEngine:
     runs-on: ubuntu-latest
@@ -177,9 +187,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ThirdParty-Wrapper:
     runs-on: ubuntu-latest
@@ -193,9 +204,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Supporting-FeatureModel:
     runs-on: ubuntu-latest
@@ -209,9 +221,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-MetricSpecification:
     runs-on: ubuntu-latest
@@ -225,9 +238,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Supporting-MDSDProfiles:
     runs-on: ubuntu-latest
@@ -241,9 +255,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-MeasurementFramework:
     runs-on: ubuntu-latest
@@ -257,9 +272,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Simulation-AbstractSimEngine:
     runs-on: ubuntu-latest
@@ -273,9 +289,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-SensorFramework:
     runs-on: ubuntu-latest
@@ -289,9 +306,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-EDP2:
     runs-on: ubuntu-latest
@@ -305,9 +323,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Core-PCM:
     runs-on: ubuntu-latest
@@ -321,9 +340,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-ProbeFramework:
     runs-on: ubuntu-latest
@@ -337,9 +357,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-RecorderFramework:
     runs-on: ubuntu-latest
@@ -353,9 +374,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Editors-Commons:
     runs-on: ubuntu-latest
@@ -369,9 +391,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Simulation-Scheduler:
     runs-on: ubuntu-latest
@@ -385,9 +408,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-Power-ProfilingImport:
     runs-on: ubuntu-latest
@@ -401,9 +425,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-FluentApiModelGenerator:
     runs-on: ubuntu-latest
@@ -417,9 +442,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-Framework:
     runs-on: ubuntu-latest
@@ -433,9 +459,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-Solver:
     runs-on: ubuntu-latest
@@ -449,9 +476,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Editors-GMF:
     runs-on: ubuntu-latest
@@ -465,9 +493,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-MonitorRepository:
     runs-on: ubuntu-latest
@@ -481,9 +510,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ThirdParty-CloudScaleUsageEvolution:
     runs-on: ubuntu-latest
@@ -497,9 +527,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-QuAL-ExperimentAnalysis:
     runs-on: ubuntu-latest
@@ -513,9 +544,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-Reliability:
     runs-on: ubuntu-latest
@@ -529,9 +561,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Editors-Tree:
     runs-on: ubuntu-latest
@@ -545,9 +578,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ReverseEngineering-SoMoX:
     runs-on: ubuntu-latest
@@ -561,9 +595,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ReverseEngineering-SoMoX-JaMoPP:
     runs-on: ubuntu-latest
@@ -577,9 +612,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-Power:
     runs-on: ubuntu-latest
@@ -593,9 +629,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-ServiceLevelObjectives:
     runs-on: ubuntu-latest
@@ -609,9 +646,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-SimuCom:
     runs-on: ubuntu-latest
@@ -625,9 +663,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ReverseEngineering-SoMoX-RuleEngine:
     runs-on: ubuntu-latest
@@ -641,9 +680,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-ProtoCom:
     runs-on: ubuntu-latest
@@ -657,9 +697,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-SimuLizar:
     runs-on: ubuntu-latest
@@ -673,9 +714,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-Power-Regression:
     runs-on: ubuntu-latest
@@ -689,9 +731,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-PerOpteryx:
     runs-on: ubuntu-latest
@@ -705,9 +748,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-SimuComExactSchedulers:
     runs-on: ubuntu-latest
@@ -721,9 +765,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-Power-CaseStudy:
     runs-on: ubuntu-latest
@@ -737,9 +782,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-EventSim:
     runs-on: ubuntu-latest
@@ -753,9 +799,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-Palladio_TX:
     runs-on: ubuntu-latest
@@ -769,9 +816,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-MeasurementsUI:
     runs-on: ubuntu-latest
@@ -785,9 +833,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Analyzer-SimuLizar-Power:
     runs-on: ubuntu-latest
@@ -801,9 +850,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-ExperimentAutomation:
     runs-on: ubuntu-latest
@@ -817,9 +867,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-CostEfficiency:
     runs-on: ubuntu-latest
@@ -833,9 +884,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addon-ArchitecturalTemplates:
     runs-on: ubuntu-latest
@@ -849,9 +901,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addon-ArchitecturalTemplates-LoadBalancing:
     runs-on: ubuntu-latest
@@ -865,9 +918,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Example-Models-Package:
     runs-on: ubuntu-latest
@@ -881,9 +935,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Editors-Sirius:
     runs-on: ubuntu-latest
@@ -897,9 +952,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Supporting-EMFProfilesEditor:
     runs-on: ubuntu-latest
@@ -913,9 +969,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Addons-Indirections:
     runs-on: ubuntu-latest
@@ -929,9 +986,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Build-UpdateSite:
     runs-on: ubuntu-latest
@@ -945,9 +1003,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Bench-Product:
     runs-on: ubuntu-latest
@@ -961,9 +1020,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Build-InstallationTest-Release:
     runs-on: ubuntu-latest
@@ -977,9 +1037,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Build-InstallationTest-Nightly:
     runs-on: ubuntu-latest
@@ -993,9 +1054,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-Bench-Oomph:
     runs-on: ubuntu-latest
@@ -1009,9 +1071,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
   Palladio-ReverseEngineering-RuleEngine-UpdateSite:
     runs-on: ubuntu-latest
@@ -1025,7 +1088,8 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
-          java-version: 11
+          java-version: 11 
+          cache: 'maven'
       - name: Verify with Maven
-        run: mvn -B verify
+        run: mvn clean verify
 
