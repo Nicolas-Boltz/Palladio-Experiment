@@ -6,7 +6,7 @@ on:
 
 jobs:
   Palladio-Supporting-Branding:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: []
     steps:
       - uses: actions/checkout@v3
@@ -23,7 +23,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Example-Models:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: []
     steps:
       - uses: actions/checkout@v3
@@ -40,7 +40,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-P2Mirror-CBIAggregator:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: []
     steps:
       - uses: actions/checkout@v3
@@ -57,7 +57,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ThirdParty-Library:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -74,7 +74,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Core-Commons:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -91,7 +91,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ThirdParty-YakinduStateCharts:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -108,7 +108,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ThirdParty-EMFProfiles:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -125,7 +125,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Supporting-EclipseJavaDevelopmentTools:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -142,7 +142,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ReverseEngineering-Java:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -159,7 +159,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ReverseEngineering-Docker:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
     steps:
       - uses: actions/checkout@v3
@@ -176,7 +176,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Supporting-WorkflowEngine:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
     steps:
       - uses: actions/checkout@v3
@@ -193,7 +193,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ThirdParty-Wrapper:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
     steps:
       - uses: actions/checkout@v3
@@ -210,7 +210,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Supporting-FeatureModel:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
     steps:
       - uses: actions/checkout@v3
@@ -227,7 +227,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-MetricSpecification:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
     steps:
       - uses: actions/checkout@v3
@@ -244,7 +244,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Supporting-MDSDProfiles:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
     steps:
       - uses: actions/checkout@v3
@@ -261,7 +261,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-MeasurementFramework:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
     steps:
       - uses: actions/checkout@v3
@@ -278,7 +278,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Simulation-AbstractSimEngine:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
     steps:
       - uses: actions/checkout@v3
@@ -295,7 +295,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-SensorFramework:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
     steps:
       - uses: actions/checkout@v3
@@ -312,7 +312,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-EDP2:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-QuAL-MeasurementFramework, Palladio-Simulation-AbstractSimEngine, Palladio-QuAL-SensorFramework]
     steps:
       - uses: actions/checkout@v3
@@ -329,7 +329,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Core-PCM:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-QuAL-EDP2]
     steps:
       - uses: actions/checkout@v3
@@ -346,7 +346,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-ProbeFramework:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-QuAL-EDP2]
     steps:
       - uses: actions/checkout@v3
@@ -363,7 +363,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-RecorderFramework:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
     steps:
       - uses: actions/checkout@v3
@@ -380,7 +380,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Editors-Commons:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
     steps:
       - uses: actions/checkout@v3
@@ -397,7 +397,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Simulation-Scheduler:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
     steps:
       - uses: actions/checkout@v3
@@ -414,7 +414,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-Power-ProfilingImport:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
     steps:
       - uses: actions/checkout@v3
@@ -431,7 +431,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-FluentApiModelGenerator:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
     steps:
       - uses: actions/checkout@v3
@@ -448,7 +448,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-Framework:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-QuAL-RecorderFramework, Palladio-Editors-Commons, Palladio-Simulation-Scheduler, Palladio-Addons-Power-ProfilingImport, Palladio-Addons-FluentApiModelGenerator]
     steps:
       - uses: actions/checkout@v3
@@ -465,7 +465,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-Solver:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Framework]
     steps:
       - uses: actions/checkout@v3
@@ -482,7 +482,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Editors-GMF:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -499,7 +499,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-MonitorRepository:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -516,7 +516,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ThirdParty-CloudScaleUsageEvolution:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -533,7 +533,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-QuAL-ExperimentAnalysis:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -550,7 +550,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-Reliability:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -567,7 +567,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Editors-Tree:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -584,7 +584,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ReverseEngineering-SoMoX:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -601,7 +601,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ReverseEngineering-SoMoX-JaMoPP:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-Solver]
     steps:
       - uses: actions/checkout@v3
@@ -618,7 +618,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-Power:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
     steps:
       - uses: actions/checkout@v3
@@ -635,7 +635,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-ServiceLevelObjectives:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
     steps:
       - uses: actions/checkout@v3
@@ -652,7 +652,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-SimuCom:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
     steps:
       - uses: actions/checkout@v3
@@ -669,7 +669,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ReverseEngineering-SoMoX-RuleEngine:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
     steps:
       - uses: actions/checkout@v3
@@ -686,7 +686,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-ProtoCom:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -703,7 +703,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-SimuLizar:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -720,7 +720,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-Power-Regression:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -737,7 +737,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-PerOpteryx:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -754,7 +754,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-SimuComExactSchedulers:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -771,7 +771,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-Power-CaseStudy:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -788,7 +788,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-EventSim:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
     steps:
       - uses: actions/checkout@v3
@@ -805,7 +805,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-Palladio_TX:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
     steps:
       - uses: actions/checkout@v3
@@ -822,7 +822,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-MeasurementsUI:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
     steps:
       - uses: actions/checkout@v3
@@ -839,7 +839,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Analyzer-SimuLizar-Power:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
     steps:
       - uses: actions/checkout@v3
@@ -856,7 +856,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-ExperimentAutomation:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
     steps:
       - uses: actions/checkout@v3
@@ -873,7 +873,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-CostEfficiency:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
     steps:
       - uses: actions/checkout@v3
@@ -890,7 +890,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addon-ArchitecturalTemplates:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addons-Palladio_TX, Palladio-Addons-MeasurementsUI, Palladio-Analyzer-SimuLizar-Power, Palladio-Addons-ExperimentAutomation, Palladio-Addons-CostEfficiency]
     steps:
       - uses: actions/checkout@v3
@@ -907,7 +907,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addon-ArchitecturalTemplates-LoadBalancing:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addon-ArchitecturalTemplates]
     steps:
       - uses: actions/checkout@v3
@@ -924,7 +924,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Example-Models-Package:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addon-ArchitecturalTemplates]
     steps:
       - uses: actions/checkout@v3
@@ -941,7 +941,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Editors-Sirius:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Addon-ArchitecturalTemplates-LoadBalancing, Palladio-Example-Models-Package]
     steps:
       - uses: actions/checkout@v3
@@ -958,7 +958,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Supporting-EMFProfilesEditor:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Editors-Sirius]
     steps:
       - uses: actions/checkout@v3
@@ -975,7 +975,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Addons-Indirections:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Editors-Sirius]
     steps:
       - uses: actions/checkout@v3
@@ -992,7 +992,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Build-UpdateSite:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Supporting-EMFProfilesEditor, Palladio-Addons-Indirections]
     steps:
       - uses: actions/checkout@v3
@@ -1009,7 +1009,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Bench-Product:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Build-UpdateSite]
     steps:
       - uses: actions/checkout@v3
@@ -1026,7 +1026,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Build-InstallationTest-Release:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Build-UpdateSite]
     steps:
       - uses: actions/checkout@v3
@@ -1043,7 +1043,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Build-InstallationTest-Nightly:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Build-UpdateSite]
     steps:
       - uses: actions/checkout@v3
@@ -1060,7 +1060,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-Bench-Oomph:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Build-UpdateSite]
     steps:
       - uses: actions/checkout@v3
@@ -1077,7 +1077,7 @@ jobs:
         run: mvn clean verify
 
   Palladio-ReverseEngineering-RuleEngine-UpdateSite:
-    runs-on: ubuntu-latest
+    runs-on: Ubuntu 18.04
     needs: [Palladio-Build-UpdateSite]
     steps:
       - uses: actions/checkout@v3
