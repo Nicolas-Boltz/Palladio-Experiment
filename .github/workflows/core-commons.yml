@@ -1,0 +1,23 @@
+name: Maven Build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+    Palladio-Core-Commons:
+    runs-on: Ubuntu 18.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: PalladioSimulator/Palladio-Core-Commons
+          submodules: true
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 11 
+          cache: 'maven'
+      - name: Verify with Maven
+        run: mvn clean verify
+
