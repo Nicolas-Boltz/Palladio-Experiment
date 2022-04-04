@@ -5,19 +5,10 @@ on:
   workflow_dispatch:
 
 jobs:
-    Palladio-Core-Commons:
+  Palladio-Core-Commons:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3
+      - uses: Nicolas-Boltz/BuildPipelineActionTest
         with:
-          repository: PalladioSimulator/Palladio-Core-Commons
-          submodules: true
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'zulu'
-          java-version: 11 
-          cache: 'maven'
-      - name: Verify with Maven
-        run: mvn clean verify
-  
+          use-display-output: true
+          deploy-updatesite: 'Core-Commons'
