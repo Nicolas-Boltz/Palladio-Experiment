@@ -6,7 +6,7 @@ on:
 
 jobs:
     Palladio-Core-Commons:
-    runs-on: Ubuntu 18.04
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
         with:
