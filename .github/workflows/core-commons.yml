@@ -19,5 +19,5 @@ jobs:
           java-version: 11 
           cache: 'maven'
       - name: Verify with Maven
-        run: mvn clean verify
+        run: DISPLAY=:1 mvn clean verify
   
