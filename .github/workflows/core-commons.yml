@@ -5,12 +5,579 @@ on:
   workflow_dispatch:
 
 jobs:
-  Palladio-Core-Commons:
+  Palladio-Supporting-Branding:
     runs-on: self-hosted
+    needs: []
     steps:
       - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
         with:
-          build-repository: 'PalladioSimulator/Palladio-Core-Commons'
+          build-repository: PalladioSimulator/Palladio-Supporting-Branding
           use-display-output: true
-          deploy-updatesite: 'Core-Commons'
+
+  Palladio-Example-Models:
+    runs-on: self-hosted
+    needs: []
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Example-Models
+          use-display-output: true
+
+  Palladio-P2Mirror-CBIAggregator:
+    runs-on: self-hosted
+    needs: []
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-P2Mirror-CBIAggregator
+          use-display-output: true
+
+  Palladio-ThirdParty-Library:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ThirdParty-Library
+          use-display-output: true
+
+  Palladio-Core-Commons:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Core-Commons
+          use-display-output: true
+
+  Palladio-ThirdParty-YakinduStateCharts:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ThirdParty-YakinduStateCharts
+          use-display-output: true
+
+  Palladio-ThirdParty-EMFProfiles:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ThirdParty-EMFProfiles
+          use-display-output: true
+
+  Palladio-Supporting-EclipseJavaDevelopmentTools:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Supporting-EclipseJavaDevelopmentTools
+          use-display-output: true
+
+  Palladio-ReverseEngineering-Java:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ReverseEngineering-Java
+          use-display-output: true
+
+  Palladio-ReverseEngineering-Docker:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-Branding, Palladio-Example-Models, Palladio-P2Mirror-CBIAggregator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ReverseEngineering-Docker
+          use-display-output: true
+
+  Palladio-Supporting-WorkflowEngine:
+    runs-on: self-hosted
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Supporting-WorkflowEngine
+          use-display-output: true
+
+  Palladio-ThirdParty-Wrapper:
+    runs-on: self-hosted
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ThirdParty-Wrapper
+          use-display-output: true
+
+  Palladio-Supporting-FeatureModel:
+    runs-on: self-hosted
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Supporting-FeatureModel
+          use-display-output: true
+
+  Palladio-QuAL-MetricSpecification:
+    runs-on: self-hosted
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-MetricSpecification
+          use-display-output: true
+
+  Palladio-Supporting-MDSDProfiles:
+    runs-on: self-hosted
+    needs: [Palladio-ThirdParty-Library, Palladio-Core-Commons, Palladio-ThirdParty-YakinduStateCharts, Palladio-ThirdParty-EMFProfiles, Palladio-Supporting-EclipseJavaDevelopmentTools, Palladio-ReverseEngineering-Java, Palladio-ReverseEngineering-Docker]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Supporting-MDSDProfiles
+          use-display-output: true
+
+  Palladio-QuAL-MeasurementFramework:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-MeasurementFramework
+          use-display-output: true
+
+  Palladio-Simulation-AbstractSimEngine:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Simulation-AbstractSimEngine
+          use-display-output: true
+
+  Palladio-QuAL-SensorFramework:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-WorkflowEngine, Palladio-ThirdParty-Wrapper, Palladio-Supporting-FeatureModel, Palladio-QuAL-MetricSpecification, Palladio-Supporting-MDSDProfiles]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-SensorFramework
+          use-display-output: true
+
+  Palladio-QuAL-EDP2:
+    runs-on: self-hosted
+    needs: [Palladio-QuAL-MeasurementFramework, Palladio-Simulation-AbstractSimEngine, Palladio-QuAL-SensorFramework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-EDP2
+          use-display-output: true
+
+  Palladio-Core-PCM:
+    runs-on: self-hosted
+    needs: [Palladio-QuAL-EDP2]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Core-PCM
+          use-display-output: true
+
+  Palladio-QuAL-ProbeFramework:
+    runs-on: self-hosted
+    needs: [Palladio-QuAL-EDP2]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-ProbeFramework
+          use-display-output: true
+
+  Palladio-QuAL-RecorderFramework:
+    runs-on: self-hosted
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-RecorderFramework
+          use-display-output: true
+
+  Palladio-Editors-Commons:
+    runs-on: self-hosted
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Editors-Commons
+          use-display-output: true
+
+  Palladio-Simulation-Scheduler:
+    runs-on: self-hosted
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Simulation-Scheduler
+          use-display-output: true
+
+  Palladio-Addons-Power-ProfilingImport:
+    runs-on: self-hosted
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-Power-ProfilingImport
+          use-display-output: true
+
+  Palladio-Addons-FluentApiModelGenerator:
+    runs-on: self-hosted
+    needs: [Palladio-Core-PCM, Palladio-QuAL-ProbeFramework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-FluentApiModelGenerator
+          use-display-output: true
+
+  Palladio-Analyzer-Framework:
+    runs-on: self-hosted
+    needs: [Palladio-QuAL-RecorderFramework, Palladio-Editors-Commons, Palladio-Simulation-Scheduler, Palladio-Addons-Power-ProfilingImport, Palladio-Addons-FluentApiModelGenerator]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-Framework
+          use-display-output: true
+
+  Palladio-Analyzer-Solver:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Framework]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-Solver
+          use-display-output: true
+
+  Palladio-Editors-GMF:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Editors-GMF
+          use-display-output: true
+
+  Palladio-QuAL-MonitorRepository:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-MonitorRepository
+          use-display-output: true
+
+  Palladio-ThirdParty-CloudScaleUsageEvolution:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ThirdParty-CloudScaleUsageEvolution
+          use-display-output: true
+
+  Palladio-QuAL-ExperimentAnalysis:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-QuAL-ExperimentAnalysis
+          use-display-output: true
+
+  Palladio-Analyzer-Reliability:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-Reliability
+          use-display-output: true
+
+  Palladio-Editors-Tree:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Editors-Tree
+          use-display-output: true
+
+  Palladio-ReverseEngineering-SoMoX:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ReverseEngineering-SoMoX
+          use-display-output: true
+
+  Palladio-ReverseEngineering-SoMoX-JaMoPP:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-Solver]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ReverseEngineering-SoMoX-JaMoPP
+          use-display-output: true
+
+  Palladio-Addons-Power:
+    runs-on: self-hosted
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-Power
+          use-display-output: true
+
+  Palladio-Addons-ServiceLevelObjectives:
+    runs-on: self-hosted
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-ServiceLevelObjectives
+          use-display-output: true
+
+  Palladio-Analyzer-SimuCom:
+    runs-on: self-hosted
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-SimuCom
+          use-display-output: true
+
+  Palladio-ReverseEngineering-SoMoX-RuleEngine:
+    runs-on: self-hosted
+    needs: [Palladio-Editors-GMF, Palladio-QuAL-MonitorRepository, Palladio-ThirdParty-CloudScaleUsageEvolution, Palladio-QuAL-ExperimentAnalysis, Palladio-Analyzer-Reliability, Palladio-Editors-Tree, Palladio-ReverseEngineering-SoMoX, Palladio-ReverseEngineering-SoMoX-JaMoPP]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ReverseEngineering-SoMoX-RuleEngine
+          use-display-output: true
+
+  Palladio-Analyzer-ProtoCom:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-ProtoCom
+          use-display-output: true
+
+  Palladio-Analyzer-SimuLizar:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-SimuLizar
+          use-display-output: true
+
+  Palladio-Addons-Power-Regression:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-Power-Regression
+          use-display-output: true
+
+  Palladio-Addons-PerOpteryx:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-PerOpteryx
+          use-display-output: true
+
+  Palladio-Addons-SimuComExactSchedulers:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-SimuComExactSchedulers
+          use-display-output: true
+
+  Palladio-Addons-Power-CaseStudy:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-Power-CaseStudy
+          use-display-output: true
+
+  Palladio-Analyzer-EventSim:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Power, Palladio-Addons-ServiceLevelObjectives, Palladio-Analyzer-SimuCom, Palladio-ReverseEngineering-SoMoX-RuleEngine]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-EventSim
+          use-display-output: true
+
+  Palladio-Addons-Palladio_TX:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-Palladio.TX
+          use-display-output: true
+
+  Palladio-Addons-MeasurementsUI:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-MeasurementsUI
+          use-display-output: true
+
+  Palladio-Analyzer-SimuLizar-Power:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Analyzer-SimuLizar-Power
+          use-display-output: true
+
+  Palladio-Addons-ExperimentAutomation:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-ExperimentAutomation
+          use-display-output: true
+
+  Palladio-Addons-CostEfficiency:
+    runs-on: self-hosted
+    needs: [Palladio-Analyzer-ProtoCom, Palladio-Analyzer-SimuLizar, Palladio-Addons-Power-Regression, Palladio-Addons-PerOpteryx, Palladio-Addons-SimuComExactSchedulers, Palladio-Addons-Power-CaseStudy, Palladio-Analyzer-EventSim]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-CostEfficiency
+          use-display-output: true
+
+  Palladio-Addon-ArchitecturalTemplates:
+    runs-on: self-hosted
+    needs: [Palladio-Addons-Palladio_TX, Palladio-Addons-MeasurementsUI, Palladio-Analyzer-SimuLizar-Power, Palladio-Addons-ExperimentAutomation, Palladio-Addons-CostEfficiency]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addon-ArchitecturalTemplates
+          use-display-output: true
+
+  Palladio-Addon-ArchitecturalTemplates-LoadBalancing:
+    runs-on: self-hosted
+    needs: [Palladio-Addon-ArchitecturalTemplates]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addon-ArchitecturalTemplates-LoadBalancing
+          use-display-output: true
+
+  Palladio-Example-Models-Package:
+    runs-on: self-hosted
+    needs: [Palladio-Addon-ArchitecturalTemplates]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Example-Models-Package
+          use-display-output: true
+
+  Palladio-Editors-Sirius:
+    runs-on: self-hosted
+    needs: [Palladio-Addon-ArchitecturalTemplates-LoadBalancing, Palladio-Example-Models-Package]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Editors-Sirius
+          use-display-output: true
+
+  Palladio-Supporting-EMFProfilesEditor:
+    runs-on: self-hosted
+    needs: [Palladio-Editors-Sirius]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Supporting-EMFProfilesEditor
+          use-display-output: true
+
+  Palladio-Addons-Indirections:
+    runs-on: self-hosted
+    needs: [Palladio-Editors-Sirius]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Addons-Indirections
+          use-display-output: true
+
+  Palladio-Build-UpdateSite:
+    runs-on: self-hosted
+    needs: [Palladio-Supporting-EMFProfilesEditor, Palladio-Addons-Indirections]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Build-UpdateSite
+          use-display-output: true
+
+  Palladio-Bench-Product:
+    runs-on: self-hosted
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Bench-Product
+          use-display-output: true
+
+  Palladio-Build-InstallationTest-Release:
+    runs-on: self-hosted
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Build-InstallationTest-Release
+          use-display-output: true
+
+  Palladio-Build-InstallationTest-Nightly:
+    runs-on: self-hosted
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Build-InstallationTest-Nightly
+          use-display-output: true
+
+  Palladio-Bench-Oomph:
+    runs-on: self-hosted
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-Bench-Oomph
+          use-display-output: true
+
+  Palladio-ReverseEngineering-RuleEngine-UpdateSite:
+    runs-on: self-hosted
+    needs: [Palladio-Build-UpdateSite]
+    steps:
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
+        with:
+          build-repository: PalladioSimulator/Palladio-ReverseEngineering-RuleEngine-UpdateSite
+          use-display-output: true
 
