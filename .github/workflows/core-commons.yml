@@ -8,8 +8,9 @@ jobs:
   Palladio-Core-Commons:
     runs-on: self-hosted
     steps:
-      - uses: Nicolas-Boltz/BuildPipelineActionTest@v2
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v3
         with:
+          build-repository: 'PalladioSimulator/Palladio-Core-Commons'
           use-display-output: true
           deploy-updatesite: 'Core-Commons'
 
