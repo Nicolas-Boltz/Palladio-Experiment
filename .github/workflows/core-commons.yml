@@ -8,7 +8,7 @@ jobs:
   Palladio-Core-Commons:
     runs-on: self-hosted
     steps:
-      - uses: Nicolas-Boltz/BuildPipelineActionTest
+      - uses: Nicolas-Boltz/BuildPipelineActionTest@v1
         with:
           use-display-output: true
           deploy-updatesite: 'Core-Commons'
