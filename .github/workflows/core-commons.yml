@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-    Palladio-Core-Commons:
+  Palladio-Core-Commons:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
