@@ -12,4 +12,5 @@ jobs:
         with:
           build-repository: PalladioSimulator/Palladio-Core-Commons
           use-display-output: true
+          deploy-updatesite: releng/org.palladiosimulator.core-commons.updatesite/target/repository
 
