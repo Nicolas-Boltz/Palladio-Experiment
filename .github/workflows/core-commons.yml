@@ -12,7 +12,7 @@ jobs:
         with:
           build-repository: PalladioSimulator/Palladio-Core-Commons
           use-display-output: true
-          deploy-updatesite: '${{ github.event.repository.name }}/${{ github.event.repository.name }}/releng/org.palladiosimulator.core-commons.updatesite/target/repository'
+          deploy-updatesite: './${{ github.event.repository.name }}/${{ github.event.repository.name }}/releng/org.palladiosimulator.core-commons.updatesite/target/repository'
           SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
