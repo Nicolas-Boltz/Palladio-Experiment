@@ -18,5 +18,3 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
-          DEPLOY_TEST: false
-
